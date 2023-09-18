@@ -1,0 +1,215 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.content{
+    background-image:
+    linear-gradient(180deg, rgba(55,129,226,1) 39%, rgba(69,145,221,1) 57%, rgba(173,205,244,1) 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.light-dark{
+    width: 600px;
+    height: 300px;
+    border: 6px solid #EFEFEF;
+    border-radius: 200px;
+    position: relative;
+}
+
+.day{
+    width: 550px;
+    height: 250px;    
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background-color: transparent;
+    border-radius: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.day .marco-day{
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    position: absolute;
+    top: 30px;
+    left: 30px;  
+    animation: levitacion-nubes 4s linear infinite;
+}
+
+.day .marco-day img{
+    width: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.day .nubes{
+    width: 220px;
+    height: 200px;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+
+.day .nubes img:nth-child(1){
+    width: 100px;
+    animation: levitacion-nubes 4s linear infinite;    
+}
+.day .nubes img:nth-child(2){
+    width: 100px;
+    position: absolute;
+    top: 100px;  
+    animation: levitacion-nubes 4s linear infinite;
+}
+
+/* animacion-day */
+
+.movimiento-marco-1{
+    animation : rotate-caja-day-1 0.5s linear forwards; 
+}
+
+.movimiento-marco-2{
+    animation : rotate-caja-day-2 0.5s linear forwards; 
+}
+
+@keyframes rotate-caja-day-1{
+    from{
+        opacity: 1;       
+    }
+    to{ 
+        opacity: 0;        
+    }
+}
+@keyframes rotate-caja-day-2{
+    from{
+        opacity: 0;
+    }
+    to{ 
+        opacity: 1; 
+        z-index: 1;       
+    }
+}
+
+@keyframes levitacion-nubes {
+    0% {
+        transform: translateX(0) ;
+    }
+    25% {
+        transform: translateX(5px) ;
+    }
+    50%{
+        transform: translateX(10px) ;
+    }
+    75%{
+        transform: translateX(5px) ;
+    }
+    100%{
+        transform: translateX(0) ;
+    }
+}
+
+.night{
+    width: 550px;
+    height: 250px;    
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: transparent;
+    border-radius: 200px; 
+    display: none;       
+}
+
+.night .marco-night{
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    position: absolute;
+    top: 25px;
+    right: 40px;  
+    animation: levitacion-luna 4s linear infinite;  
+}
+
+.night .marco-night img{
+    width: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.night .estrellas{
+    width: 220px;
+    height: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+}
+
+.night .estrellas img:nth-child(1){
+    width: 50px;   
+    position: absolute;
+    top: 20px; 
+    left: 10px;
+    animation: levitacion-luna 4s linear infinite;
+}
+.night .estrellas img:nth-child(2){
+    width: 50px;
+    position: absolute;
+    left: 70px;
+    bottom: 20px; 
+    animation: levitacion-luna 4s linear infinite;
+}
+.night .estrellas img:nth-child(3){
+    width: 50px;
+    position: absolute;
+    top: 40px;
+    right: 20px;    
+    animation: levitacion-luna 4s linear infinite;
+}
+
+/* animacion-night caja - img */
+
+.movimiento-night-1{
+    animation: rotate-marco-night-1 0.5s linear forwards; 
+}
+.movimiento-night-2{
+    animation: rotate-marco-night-2 0.5s linear forwards; 
+}
+
+@keyframes rotate-marco-night-1{
+    from{
+        opacity: 0;
+    }
+    to{        
+        opacity: 1;  
+    }   
+}
+@keyframes rotate-marco-night-2{
+    from{
+        opacity: 1;
+    }
+    to{        
+        opacity: 0;        
+    }   
+}
+@keyframes levitacion-luna {
+    0% {
+        transform: translateX(0) translateY(0); 
+    }
+    25% {
+        transform: translateX(10px) translateY(-5px); 
+    }
+    50%{
+        transform: translateX(15px) translateY(-10px);
+    }
+    75%{
+        transform: translateX(10px) translateY(-5px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+}
